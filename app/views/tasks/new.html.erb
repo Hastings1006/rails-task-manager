@@ -1,0 +1,8 @@
+<h1>Add a task to list</h1>
+<%= form_with model: @task do |x| %>
+  <%= x.label :title %>
+  <%= x.text_field :title %>
+  <%= x.label :details %>
+  <%= x.text_field :details %>
+  <%= x.submit %>
+<% end %>
