@@ -1,7 +1,13 @@
-<h1>My Tasks</h1>
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task_path(task) %>: done =  <%= task.completed %></li>
-  <% end %>
-</ul>
-<%= link_to "Add new task", new_task_path %>
+<div class="container">
+  <h1 class=" d-flex justify-content-center">My Tasks</h1>
+  <div class="d-flex justify-content-center">
+    <ul class="list-unstyled">
+      <% @tasks.each do |task| %>
+        <li><%= link_to task.title, task_path(task) %>: done =  <input type="checkbox" <%= task.completed ? 'checked' : '' %>></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class=" d-flex justify-content-center">
+    <%= link_to "Add", new_task_path %>
+  </div>
+</div>
